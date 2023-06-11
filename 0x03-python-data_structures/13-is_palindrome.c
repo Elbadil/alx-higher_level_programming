@@ -58,7 +58,6 @@ int is_palindrome(listint_t **head)
 	slow->next = NULL;
 
 	reverse = reverse_list(&half);
-
 	/* Compare the first half with the reversed second half */
 	while (current != NULL && reverse != NULL)
 	{
@@ -69,5 +68,6 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		reverse = reverse->next;
 	}
+	reverse_list(&half);
 	return (1); /* Linked list is a palindrome */
 }
