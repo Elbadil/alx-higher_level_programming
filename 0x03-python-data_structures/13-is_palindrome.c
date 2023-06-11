@@ -56,13 +56,13 @@ int is_palindrome(listint_t **head)
 	half = slow->next;
 	/* Break the link between the first and second halves */
 	slow->next = NULL;
-
 	reverse = reverse_list(&half);
 	/* Compare the first half with the reversed second half */
 	while (current != NULL && reverse != NULL)
 	{
 		if (current->n != reverse->n)
 		{
+			reverse_list(&half);
 			return (0); /* Not a palindrome */
 		}
 		current = current->next;
