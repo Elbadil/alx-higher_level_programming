@@ -30,7 +30,6 @@ listint_t *reverse_list(listint_t **head)
 */
 int is_palindrome(listint_t **head)
 {
-
 	listint_t *slow = *head;
 	listint_t *fast = *head;
 	listint_t *current = *head;
@@ -56,6 +55,7 @@ int is_palindrome(listint_t **head)
 	half = slow->next;
 	/* Break the link between the first and second halves */
 	slow->next = NULL;
+
 	reverse = reverse_list(&half);
 	/* Compare the first half with the reversed second half */
 	while (current != NULL && reverse != NULL)
