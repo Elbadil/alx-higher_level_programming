@@ -20,6 +20,6 @@ def roman_to_int(roman_string):
         if roman_string[i] == 'D':
             result += 500
         if roman_string[i] == 'M':
-            result += 100
+            result += 1000
 
     return result
