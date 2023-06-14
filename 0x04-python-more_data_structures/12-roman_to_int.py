@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
 
     for i in range(len(roman_string)):
         if roman_string[i] not in roman_dict:
-            return 0
+            return None
 
         roman_value = roman_dict[roman_string[i]]
         if i < len(roman_string) - 1:
