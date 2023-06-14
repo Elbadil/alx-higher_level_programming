@@ -5,6 +5,8 @@ def roman_to_int(roman_string):
 
     result = 0
     for i in range(len(roman_string)):
+        if roman_string[0] == 'I' and roman_string[1] in ['X', 'V']:
+            result -= 1
         if roman_string[i] == 'I':
             result += 1
         if roman_string[i] == 'V':
