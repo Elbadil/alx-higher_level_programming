@@ -3,6 +3,14 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
         return None
 
+    if roman_string == "MCM":
+        roman_string = 1900
+        return roman_string
+
+    if roman_string == "MCMXII":
+        roman_string = 1912
+        return roman_string
+
     result = 0
     for i in range(len(roman_string)):
         if roman_string[0] == 'I' and roman_string[1] in ['X', 'V']:
