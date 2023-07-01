@@ -5,11 +5,16 @@
 def matrix_divided(matrix, div):
     """ matrix_divided function returns a new matrix with all
     elements divided by div(div can be an integer or a float).
-    Raises a TypeError if
-    - div is zero
-    - div not a float or integer
-    - Elements of the matrix are not floats or integers
-    - Lists of the matrix do not have the same size
+    Args:
+        matrix: list of lists we're using to divide it's elements
+        div: the number we're dividing the elements with
+    Raises a TypeError if:
+        div is zero
+        div not a float or integer
+        Elements of the matrix are not floats or integers
+        Lists of the matrix do not have the same size
+    Returns:
+        a new matrix with all elements divided by div
     """
     if not isinstance(matrix, list) or not\
        all(isinstance(row, list) for row in matrix):

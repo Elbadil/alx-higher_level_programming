@@ -4,8 +4,13 @@
 
 def add_integer(a, b=98):
     """ add_integer function returns the addition of two integers
-    Casts floats into integers before executing the addition
-    Raises a TypeError if a parameter (a or b) are not floats or integers
+    Args:
+        a: first integer
+        b: second integer
+    Raises:
+        TypeError if a parameter (a or b) are not floats or integers
+    Returns:
+        The addition of two integers (a, b)
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")

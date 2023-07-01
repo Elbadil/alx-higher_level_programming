@@ -1,0 +1,65 @@
+-> Usage of the function print_square(size)
+-> print_square function prints a square using "#"
+
+-------------------------------------------------------------------------
+Printing a square using "#" - the size is an integer and higher than 0
+-------------------------------------------------------------------------
+    >>> print_square = __import__('4-print_square').print_square
+
+-------------------------------------------------------------------------
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+-------------------------------------------------------------------------
+    >>> print_square(6)
+    ######
+    ######
+    ######
+    ######
+    ######
+    ######
+
+-------------------------------------------------------------------------
+Printing a square using "#" - the size is less than 0 - will raise
+a ValueError
+-------------------------------------------------------------------------
+    >>> print_square(-2)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+-------------------------------------------------------------------------
+Passing size as 0 will print nothing
+-------------------------------------------------------------------------
+    >>> print_square(0)
+
+-------------------------------------------------------------------------
+Passing size as non integer will raise TypeError
+-------------------------------------------------------------------------
+    >>> print_square("Three")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+-------------------------------------------------------------------------
+    >>> print_square([9, 9])
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+-------------------------------------------------------------------------
+    >>> print_square(7.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+-------------------------------------------------------------------------
+Not Passing a size will raise a TypeError - At least one name must 
+be provided
+-------------------------------------------------------------------------
+    >>> print_square()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
