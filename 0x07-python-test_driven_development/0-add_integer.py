@@ -3,8 +3,7 @@
 
 
 def add_integer(a, b=98):
-    """
-    add_integer function returns the addition of two integers
+    """ add_integer function returns the addition of two integers
     Casts floats into integers before executing the addition
     Raises a TypeError if a parameter (a or b) are not floats or integers
     """

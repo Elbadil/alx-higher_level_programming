@@ -3,8 +3,7 @@
 
 
 def say_my_name(first_name, last_name=""):
-    """
-    say_my_name function prints the first and last name given
+    """ say_my_name function prints the first and last name given
     Raises a TypeError if an argument is not a string
     Last name is optional the function will print first name
     regardless

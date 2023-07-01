@@ -3,9 +3,8 @@
 
 
 def matrix_divided(matrix, div):
-    """
-    matrix_divided function returns a new matrix with all elements
-    divided by div(div can be an integer or a float).
+    """ matrix_divided function returns a new matrix with all
+    elements divided by div(div can be an integer or a float).
     Raises a TypeError if
     - div is zero
     - div not a float or integer
