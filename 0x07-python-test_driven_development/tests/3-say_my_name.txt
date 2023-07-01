@@ -1,0 +1,59 @@
+-> Usage of the function say_my_name(first_name, last_name="")
+-> say_my_name prints "My name is <first name> <last name>"
+
+------------------------------------------------------------------------
+Printing first and last name when both arguments are strings
+------------------------------------------------------------------------
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+------------------------------------------------------------------------
+    >>> say_my_name("Adel", "Elb")
+    My name is Adel Elb
+
+------------------------------------------------------------------------
+    >>> say_my_name("Saad", "Elmail")
+    My name is Saad Elmail
+
+------------------------------------------------------------------------
+Providing last name is optional, the function will print first name
+regardless
+------------------------------------------------------------------------
+    >>> say_my_name("Adel")
+    My name is Adel 
+
+------------------------------------------------------------------------
+Not Providing a first name will raise a TypeError - At least one name 
+must be provided
+------------------------------------------------------------------------
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+-------------------------------------------------------------------------
+Providing a non str type as argument will raise a TypeError
+-------------------------------------------------------------------------
+    >>> say_my_name("Adel", ["Elb", "Ali"])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+-------------------------------------------------------------------------
+    >>> say_my_name("Saad", ("El", "Mail"))
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+-------------------------------------------------------------------------
+    >>> say_my_name(["Sa", "Ad"])
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+-------------------------------------------------------------------------
+    >>> say_my_name(None, "Elbali")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+-------------------------------------------------------------------------
