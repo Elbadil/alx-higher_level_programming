@@ -1,0 +1,79 @@
+-> Usage of the function text_indentation(text)
+-> text_indentation function prints 2 new lines after each
+    of these chars [".", "?", ":"] and removes spaces at the
+    beginning or at the end of each printed line
+
+--------------------------------------------------------------------------
+Printing a text that contains the chars [".", "?", ":"] - text_indentation
+will print 2 new lines after it encounters these chars
+--------------------------------------------------------------------------
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+-------------------------------------------------------------------------
+    >>> text_indentation("Hello World. How is life? ")
+    Hello World.
+    <BLANKLINE>
+    How is life?
+    <BLANKLINE>
+
+-------------------------------------------------------------------------
+    >>> text_indentation("Hello there, Please enter your name here: ")
+    Hello there, Please enter your name here:
+    <BLANKLINE>
+
+--------------------------------------------------------------------------
+Printing a text that starts with spaces or - text_indentation will remove
+the spaces(identation)
+--------------------------------------------------------------------------
+    >>> text_indentation("  My name is Adel!")
+    My name is Adel!
+
+--------------------------------------------------------------------------
+This function also Removes spaces at the beginning or at the end of each 
+printed line
+--------------------------------------------------------------------------
+    >>> text_indentation("  My name is Adel! And I love it here. ")
+    My name is Adel! And I love it here.
+    <BLANKLINE>
+
+--------------------------------------------------------------------------
+Printing a text that coutains the char "\n" (new line) - text_indentation 
+will remove the spaces after a new line so we can avoid identation at the 
+beginning of the next line
+--------------------------------------------------------------------------
+    >>> text_indentation("  My name is Adel!\n I'm new here.")
+    My name is Adel!
+    I'm new here.
+    <BLANKLINE>
+
+--------------------------------------------------------------------------
+    >>> text_indentation("\n\n You're welcome here. ")
+    <BLANKLINE>
+    <BLANKLINE>
+    You're welcome here.
+    <BLANKLINE>
+
+--------------------------------------------------------------------------
+Trying to pass an argument to the function other than a string will raise
+a TypeError
+--------------------------------------------------------------------------
+    >>> text_indentation(1997.12)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+--------------------------------------------------------------------------
+    >>> text_indentation(["Hello", "There"])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+--------------------------------------------------------------------------
+Not Passing an argument to the function will raise a TypeError
+--------------------------------------------------------------------------
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+--------------------------------------------------------------------------
