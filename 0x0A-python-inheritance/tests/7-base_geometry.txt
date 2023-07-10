@@ -6,75 +6,106 @@
   integer
 
 
----------------------------------------------------------------------
-BaseGeometry class type
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+BaseGeometry class
+----------------------------------------------------------------------------------------------------------
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
     >>> type(bg)
     <class '7-base_geometry.BaseGeometry'>
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+    >>> bg = BaseGeometry()
     >>> print(bg) # doctest: +ELLIPSIS
     <7-base_geometry.BaseGeometry object at ...>
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+BaseGeometry class takes no arguments - Trying to pass an argument will raise a TypeError
+----------------------------------------------------------------------------------------------------------
+    >>> bg = BaseGeometry("Py better than C")
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry() takes no arguments
+
+----------------------------------------------------------------------------------------------------------
 Usage of the area method
----------------------------------------------------------------------    
+----------------------------------------------------------------------------------------------------------
+    >>> bg = BaseGeometry()
+    >>> print(bg.area) # doctest: +ELLIPSIS
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at ...>>
+
+----------------------------------------------------------------------------------------------------------
     >>> bg = BaseGeometry()
     >>> print(bg.area())
     Traceback (most recent call last):
         ...
     Exception: area() is not implemented
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 Usage of the integer_validator method with integer values
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator) # doctest: +ELLIPSIS
+    <bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry object at ...>>
+
+----------------------------------------------------------------------------------------------------------
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator("width", 89)
 
----------------------------------------------------------------------
-Usage of the integer_validator method with non-integer values will
-raise a TypeError
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+Usage of the integer_validator method with non-integer values will raise a TypeError
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Age", "Elb")
     Traceback (most recent call last):
         ...
     TypeError: Age must be an integer
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Width", ["Every", "one"])
     Traceback (most recent call last):
         ...
     TypeError: Width must be an integer
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Width", (1, 3))
     Traceback (most recent call last):
         ...
     TypeError: Width must be an integer
 
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Height", 17.8)
     Traceback (most recent call last):
         ...
     TypeError: Height must be an integer
 
---------------------------------------------------------------------
-Usage of the integer_validator method with integer value that is 
-less or equal to 0 will raise a ValueError
---------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+Usage of the integer_validator method with integer value that is less or equal to 0 will raise a ValueError
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Height", -27)
     Traceback (most recent call last):
         ...
     ValueError: Height must be greater than 0
 
---------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
     >>> bg.integer_validator("Width", 0)
     Traceback (most recent call last):
         ...
     ValueError: Width must be greater than 0
 
---------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+Not providing arguments to the integer_validator will raise a TypeError
+----------------------------------------------------------------------------------------------------------
+    >>> bg.integer_validator() 
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+----------------------------------------------------------------------------------------------------------
+    >>> bg.integer_validator("Name") 
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+----------------------------------------------------------------------------------------------------------
