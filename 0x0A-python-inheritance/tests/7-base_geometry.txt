@@ -1,0 +1,75 @@
+-> Usage of the methods in class BaseGeometry
+-> methods:
+  - area method that raises an Exception with the message area() is 
+  not implemented
+  - integer_validator method that validates if the value given is an
+  integer
+
+---------------------------------------------------------------------
+Usage of the area method
+---------------------------------------------------------------------
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+---------------------------------------------------------------------
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     print(bg.area())
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ... 
+    [Exception] area() is not implemented
+
+---------------------------------------------------------------------
+Usage of the integer_validator method with integer values
+---------------------------------------------------------------------
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+---------------------------------------------------------------------
+Usage of the integer_validator method with non-integer values will
+raise a TypeError
+---------------------------------------------------------------------
+    >>> try:
+    ...     bg.integer_validator("Age", "Elb")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ...
+    [TypeError] Age must be an integer
+
+---------------------------------------------------------------------
+    >>> try:
+    ...     bg.integer_validator("Width", ["Every", "one"])
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ...
+    [TypeError] Width must be an integer
+
+---------------------------------------------------------------------
+    >>> try:
+    ...     bg.integer_validator("Height", 17.8)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ...
+    [TypeError] Height must be an integer
+
+--------------------------------------------------------------------
+Usage of the integer_validator method with integer value that is 
+less or equal to 0 will raise a ValueError
+--------------------------------------------------------------------
+    >>> try:
+    ...     bg.integer_validator("Height", -27)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ...
+    [ValueError] Height must be greater than 0
+
+--------------------------------------------------------------------
+    >>> try:
+    ...     bg.integer_validator("Width", 0)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    ...
+    [ValueError] Width must be greater than 0
+
+--------------------------------------------------------------------
