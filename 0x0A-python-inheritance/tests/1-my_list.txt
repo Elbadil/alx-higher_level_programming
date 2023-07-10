@@ -1,0 +1,66 @@
+-> Usage of the function print_sorted(self):
+-> print_sorted function prints a list but sorted
+
+---------------------------------------------------------------------
+Usage with a list of positive integers
+---------------------------------------------------------------------
+    >>> MyList = __import__('1-my_list').MyList
+
+---------------------------------------------------------------------
+    >>> int_list = MyList()
+    >>> int_list.append(22)
+    >>> int_list.append(72)
+    >>> int_list.append(122)
+    >>> int_list.append(6)
+    >>> int_list.append(11)
+    >>> int_list.append(4)
+    >>> int_list.append(56)
+    >>> int_list.print_sorted()
+    [4, 6, 11, 22, 56, 72, 122]
+
+---------------------------------------------------------------------
+Usage with a list of negative integers
+---------------------------------------------------------------------
+    >>> negtive_list = MyList()
+    >>> negtive_list.append(-22)
+    >>> negtive_list.append(-72)
+    >>> negtive_list.append(-122)
+    >>> negtive_list.append(-6)
+    >>> negtive_list.print_sorted()
+    [-122, -72, -22, -6]
+
+---------------------------------------------------------------------
+Usage with a list of negative and positive integers
+---------------------------------------------------------------------
+    >>> mixed_list = MyList()
+    >>> mixed_list.append(-22)
+    >>> mixed_list.append(72)
+    >>> mixed_list.append(-122)
+    >>> mixed_list.append(6)
+    >>> mixed_list.print_sorted()
+    [-122, -22, 6, 72]
+
+---------------------------------------------------------------------
+The original list is left unchanged
+---------------------------------------------------------------------
+    >>> mixed_list = MyList()
+    >>> mixed_list.append(-22)
+    >>> mixed_list.append(72)
+    >>> mixed_list.append(-122)
+    >>> mixed_list.append(6)
+    >>> print(mixed_list)
+    [-22, 72, -122, 6]
+    >>> mixed_list.print_sorted()
+    [-122, -22, 6, 72]
+    >>> print(mixed_list)
+    [-22, 72, -122, 6]
+
+---------------------------------------------------------------------
+if we don't append(add) an element to the list - the function will 
+print an empty list
+---------------------------------------------------------------------
+    >>> int_list = MyList()
+    >>> int_list.print_sorted()     
+    []
+
+---------------------------------------------------------------------
