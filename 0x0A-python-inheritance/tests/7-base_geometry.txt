@@ -43,6 +43,15 @@ Usage of the area method
     Exception: area() is not implemented
 
 ------------------------------------------------------------------------------------
+Passing argument to the area function will raise A TypeError 
+------------------------------------------------------------------------------------
+    >>> bg = BaseGeometry()
+    >>> print(bg.area("Rect"))
+    Traceback (most recent call last):
+        ...
+    TypeError: area() takes 1 positional argument but 2 were given
+
+------------------------------------------------------------------------------------
 Usage of the integer_validator method with integer values
 ------------------------------------------------------------------------------------
     >>> bg = BaseGeometry()
@@ -112,5 +121,13 @@ Not providing arguments to the integer_validator will raise a TypeError
         ...
     TypeError: integer_validator() missing 1 required positional argument:
      'value'
+
+------------------------------------------------------------------------------------
+Providing more than 3 arguments to the integer_validator will raise a TypeError
+------------------------------------------------------------------------------------
+    >>> bg.integer_validator("Name", 9, "Age") # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
 ------------------------------------------------------------------------------------
