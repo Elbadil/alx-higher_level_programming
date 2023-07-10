@@ -5,12 +5,22 @@
   - integer_validator method that validates if the value given is an
   integer
 
----------------------------------------------------------------------
-Usage of the area method
----------------------------------------------------------------------
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 ---------------------------------------------------------------------
+BaseGeometry class type
+---------------------------------------------------------------------
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+---------------------------------------------------------------------
+    >>> print(bg) # doctest: +ELLIPSIS
+    <7-base_geometry.BaseGeometry object at ...>
+
+---------------------------------------------------------------------
+Usage of the area method
+---------------------------------------------------------------------    
     >>> bg = BaseGeometry()
     >>> print(bg.area())
     Traceback (most recent call last):
@@ -38,6 +48,13 @@ raise a TypeError
     Traceback (most recent call last):
         ...
     TypeError: Width must be an integer
+
+---------------------------------------------------------------------
+    >>> bg.integer_validator("Width", (1, 3))
+    Traceback (most recent call last):
+        ...
+    TypeError: Width must be an integer
+
 
 ---------------------------------------------------------------------
     >>> bg.integer_validator("Height", 17.8)
