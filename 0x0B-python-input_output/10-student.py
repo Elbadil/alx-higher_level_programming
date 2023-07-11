@@ -16,4 +16,5 @@ class Student:
         if attrs is None:
             return vars(self)
 
-        return {a: getattr(self, attr) for a in attrs if hasattr(self, a)}
+        if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
+            return {a: getattr(self, a) for a in attrs if hasattr(self, a)}
