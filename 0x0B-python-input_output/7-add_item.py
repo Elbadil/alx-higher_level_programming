@@ -7,9 +7,10 @@ if __name__ == "__main__":
     load_from_json_file = \
         __import__('6-load_from_json_file').load_from_json_file
 
-    elements = []
-    elements = load_from_json_file("add_item.json")
-
+    try:
+        elements = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        elements = []
     args = len(sys.argv) - 1
     for i in range(args):
         elements.append(sys.argv[i + 1])
