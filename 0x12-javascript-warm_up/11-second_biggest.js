@@ -5,6 +5,7 @@ const argv = process.argv;
 
 if (argv.length <= 3) {
   console.log(0);
+  return;
 }
 
 let largestNum = -Infinity;
