@@ -7,7 +7,7 @@ class Rectangle {
       this.height = h;
     }
   }
-  
+
   print () {
     let lines = '';
     for (let i = 0; i < this.height; i++) {
@@ -20,8 +20,7 @@ class Rectangle {
   }
 
   rotate () {
-    let temp;
-    temp = this.width; 
+    const temp = this.width;
     this.width = this.height;
     this.height = temp;
   }
@@ -31,5 +30,5 @@ class Rectangle {
     this.height *= 2;
   }
 }
-  
+
 module.exports = Rectangle;
