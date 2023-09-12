@@ -4,4 +4,4 @@ const list = require('./100-data').list;
 
 console.log(list);
 
-console.log(list.map((a, aI) => a * aI));
+console.log(list.map((a, aIndex) => a * aIndex));
