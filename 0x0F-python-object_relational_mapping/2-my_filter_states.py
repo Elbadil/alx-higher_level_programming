@@ -4,7 +4,6 @@ from sys import argv
 
 
 if __name__ == "__main__":
-
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -14,9 +13,8 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-
-    states_id = "SELECT * FROM states"
-    cursor.execute(states_id)
+    argv_states = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+    cursor.execute(argv_states)
     results = cursor.fetchall()
 
     for row in results:
