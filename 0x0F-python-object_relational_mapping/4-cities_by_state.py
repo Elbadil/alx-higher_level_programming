@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-import MySQLdb
-from sys import argv
+"""MySQLdb Module that connects Python script to a database"""
 
 
 if __name__ == "__main__":
+    import MySQLdb
+    from sys import argv
+
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
