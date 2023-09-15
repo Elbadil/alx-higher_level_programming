@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-import MySQLdb
-from sys import argv
+"""MySQLdb Module that connects Python script to a database"""
 
 
 if __name__ == "__main__":
+    import MySQLdb
+    from sys import argv
+
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -13,7 +15,7 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    safe_rgv_states = "SELECT * FROM states WHERE name = %s"
+    safe_rgv_states = "SELECT * FROM states WHERE name LIKE BINARY %s"
     cursor.execute(safe_rgv_states, (argv[4],))
     results = cursor.fetchall()
 
