@@ -15,7 +15,10 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    n_states = "SELECT * FROM states WHERE name REGEXP '^N' ORDER BY states.id"
+    n_states = """SELECT * FROM states
+                  WHERE name LIKE BINARY 'N%'
+                  ORDER BY states.id ASC"""
+
     cursor.execute(n_states)
     results = cursor.fetchall()
 
