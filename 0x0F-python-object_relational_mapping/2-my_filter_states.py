@@ -15,7 +15,9 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    argv_states = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+    argv_states = """SELECT * FROM states
+                     WHERE name LIKE BINARY '{}'""".format(argv[4])
+
     cursor.execute(argv_states)
     results = cursor.fetchall()
 
