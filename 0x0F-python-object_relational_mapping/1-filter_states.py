@@ -15,7 +15,7 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    n_states = "SELECT * FROM states WHERE name REGEXP '^N'"
+    n_states = "SELECT * FROM states WHERE name REGEXP '^N' ORDER BY states.id"
     cursor.execute(n_states)
     results = cursor.fetchall()
 
