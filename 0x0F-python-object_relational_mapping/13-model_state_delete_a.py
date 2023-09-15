@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     for state in del_states:
         session.delete(state)
-    
+
     session.commit()
