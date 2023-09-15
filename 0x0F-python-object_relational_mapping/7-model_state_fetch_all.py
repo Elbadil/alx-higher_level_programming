@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""SQLAlchemy that connects a python script to a database"""
 from sqlalchemy import create_engine, Column, String, CHAR, Integer
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
