@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""MySQLdb Module that connects Python script to a database """
+"""MySQLdb Module that connects Python script to a database"""
 
 
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-
 
     conn = MySQLdb.connect(
         host="localhost",
@@ -21,7 +20,7 @@ if __name__ == "__main__":
                           FROM states s
                           JOIN cities c
                           ON s.id = c.state_id
-                          WHERE s.name = %s
+                          WHERE s.name LIKE BINARY %s
                           ORDER BY c.id"""
 
     cursor.execute(cities_of_states, (argv[4],))
