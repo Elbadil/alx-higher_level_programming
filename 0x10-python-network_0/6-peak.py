@@ -3,7 +3,7 @@
 
 
 def find_peak(list_of_integers):
-    """find_peak function that finds a peak in a list of 
+    """find_peak function that finds a peak in a list of
     unsorted integers
     Args:
         list_of_integers: list to find the peak from
