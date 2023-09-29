@@ -12,7 +12,7 @@ if __name__ == "__main__":
         req = requests.post(url, data={"q": ""})
     else:
         req = requests.post(url, data={"q": argv[1]})
-    
+
     data_json = req.json()
     if type(data_json) != dict:
         print("Not a valid JSON")
