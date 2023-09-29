@@ -12,10 +12,10 @@ if __name__ == "__main__":
     # Encoding the data for the POST request
     data = parse.urlencode(emails).encode("utf-8")
 
-    #Creating a request object
+    # Creating a request object
     req = request.Request(argv[1], data=data, method="POST")
 
-    #Sending the POST request
+    # Sending the POST request
     with request.urlopen(req) as resp:
         resp_data = resp.read().decode("utf-8")
         print(resp_data)
