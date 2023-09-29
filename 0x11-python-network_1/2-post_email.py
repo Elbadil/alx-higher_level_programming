@@ -18,4 +18,4 @@ if __name__ == "__main__":
     #Sending the POST request
     with request.urlopen(req) as resp:
         resp_data = resp.read().decode("utf-8")
-        print(f"Your email is: {resp_data}")
+        print(resp_data)
