@@ -11,4 +11,4 @@ if __name__ == "__main__":
             data_decoded = data.decode("UTF-8")
             print(data_decoded)
     except urllib.error.HTTPError as e:
-        print(e.code)
+        print(f"Error code: {e.code}")
