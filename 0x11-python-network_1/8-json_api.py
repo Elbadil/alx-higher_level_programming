@@ -13,11 +13,11 @@ if __name__ == "__main__":
     else:
         req = requests.post(url, data={"q": argv[1]})
 
-    data_json = req.json()
-    if type(data_json) != dict:
-        print("Not a valid JSON")
-    else:
+    try:
+        data_json = req.json()
         if len(data_json) == 0:
             print("No result")
         else:
             print(f"[{data_json.get('id')}] {data_json.get('name')}")
+    except ValueError:
+        print("Not a valid JSON")
