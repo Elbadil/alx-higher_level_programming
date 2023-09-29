@@ -20,4 +20,4 @@ if __name__ == "__main__":
         if len(data_json) == 0:
             print("No result")
         else:
-            print(f"[{data_json['id']}] {data_json['name']}")
+            print(f"[{data_json.get('id')}] {data_json.get('name')}")
