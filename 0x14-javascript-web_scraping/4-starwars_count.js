@@ -4,7 +4,7 @@ const process = require('process');
 const argv = process.argv;
 const request = require('request');
 
-const WedgeAntillesID = "/18/";
+const WedgeAntillesID = '/18/';
 const filmsURL = argv[2];
 
 request(filmsURL, (error, response, body) => {
