@@ -4,9 +4,8 @@ const process = require('process');
 const argv = process.argv;
 const request = require('request');
 
-const WedgeAntillesID = 18;
+const WedgeAntillesID = "/18/";
 const filmsURL = argv[2];
-const charURL = `https://swapi-api.alx-tools.com/api/people/${WedgeAntillesID}/`;
 
 request(filmsURL, (error, response, body) => {
   if (error) {
@@ -16,7 +15,7 @@ request(filmsURL, (error, response, body) => {
     const filmsData = JSON.parse(body);
     for (const film of filmsData.results) {
       for (const character of film.characters) {
-        if (character === charURL) {
+        if (character.endsWith(WedgeAntillesID)) {
           counter += 1;
         }
       }
