@@ -1,4 +1,4 @@
-#!/usr/bin/node
+// JQuery to change the color of the header element
 
 $(document).ready(function() {
   const header = $('header')
